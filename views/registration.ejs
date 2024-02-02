@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/account.css" />
+
+    <!-- Fontawesome CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .alertBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="alertBox" id="alertBox">
+      <span> <% if(typeof message !== 'undefined'){ %>
+        <h5 style="color: green;padding: 10px;"><%= message %></h5>
+        <% } %></span>
+
+    </div>
+    <div class="container">
+      <input type="checkbox" id="flip" />
+      <div class="cover">
+        <div class="front">
+          <img src="images/acoount.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Every new art is <br />
+              in you.</span
+            >
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+        <div class="back">
+          <img src="images/account2.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Complete miles of journey <br />
+              with one step</span
+            >
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="signup-form">
+            <div class="title">SIGNUP</div>
+            <form action="" method="post" enctype="multipart/form-data" id="register-form">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="name" placeholder="Enter your name" required />
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-phone"></i>
+                  <input
+                    type="text" name="mno"
+                    placeholder="Enter your phone no."
+                    required
+                  />
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" name="email" placeholder="Enter your email" required />
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input
+                    type="password" name="password"
+                    placeholder="Enter your password"
+                    required
+                  />
+                </div>
+                <div class="button input-box">
+                  <input type="submit" value="Register">
+                </div>
+                <div class="text sign-up-text">
+                  Already have an account?<a href="/login">Login now</a>
+                </div>
+              </div>
+            </form>
+            <!-- Inside the form -->
+            <form id="resend-form" action="/resend-otp" method="post" enctype="multipart/form-data"  style="display: none;">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Enter your email" required />
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Send OTP">
+              </div>
+            </form>
+            
+            <form id="verify-form" action="/verify" method="post" enctype="multipart/form-data" >
+              <div class="input-box" id="email">
+                <i class="fas fa-book"></i>
+                <input type="email" name="email" placeholder="Enter your email" required />
+              </div>
+              <div class="input-box" id="otp-field">
+                <i class="fas fa-key"></i>
+                <input type="text" name="otp" placeholder="Enter OTP" required />
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Verify">
+                <input type="submit" value="Resend OTP" style="margin-left: 10px;" id="resend-form" onclick="showVerifyForm(event)">
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    <!-- Back to Top -->
+  </div>
+  <a href="/" class="mainPageBtn">Main Page &nbsp;<i class="fa fa-arrow-left"></i></a>
+  <script>
+    // Function to hide the div
+    function hideDiv() {
+      const div = document.getElementById('alertBox');
+      div.style.display = 'none';
+    }
+    setTimeout(hideDiv, 1000); // 5000 milliseconds (5 seconds)
+    
+        </script>
+
+<script>
+  function showResendForm() {
+    // document.getElementById('resend-form').style.display = 'block';
+    // document.getElementById('verify-form').style.display = 'none';
+  }
+
+  function showVerifyForm(event) {
+    event.preventDefault();
+    document.getElementById('verify-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('resend-form').style.display = 'block';
+  }
+</script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!-- views/edit.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Data</title>
+</head>
+<body>
+  <h1>Edit Data</h1>
+  <form action="/edit/<%= data._id %>" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title" value="<%= data.title %>" required>
+    <input type="file" name="image" accept="image/*">
+    <input type="hidden" name="originalImage" value="<%= data.image %>">
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

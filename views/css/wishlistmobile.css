@@ -1,0 +1,54 @@
+.product-price input {
+    width: 40px;
+    height: 30px;
+    font-size: 1.3rem;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    border: none;
+}
+
+.qty button.btn-minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.qty button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    background: #a51b53;
+    border: none;
+    border-radius: 4px;
+}
+
+.product-price button.btn-cart {
+    width: auto;
+    margin: 10px;
+    padding: 5px 10px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    background: #a51b53;
+    border: none;
+    border-radius: 4px;
+}
+
+.product-price button.btn-cart:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #a51b53;
+    transition: all 0.5s;
+}
+
+/* #wishImg .img img{
+    height: 350px;
+    object-fit: contain;
+    width: 100%;
+}
+#wishImg .img{
+    object-fit: contain;
+    width: 100%;
+}
+ */

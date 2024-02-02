@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Forget password</title>
+    <link rel="stylesheet" href="css/account.css" />
+
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="flip" />
+      <div class="cover">
+        <div class="front">
+          <img src="images/acoount.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Every new art is <br />
+              in you.</span
+            >
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+        <div class="back">
+          <img src="images/account2.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Complete miles of journey <br />
+              with one step</span
+            >
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Update Account Details</div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input
+                    type="text"
+                    name="name"
+                    value="<%= user.name %>"
+                    placeholder="Enter Name"
+                    required
+                  />
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input
+                    type="email"
+                    name="email"
+                    value="<%= user.email %>"
+                    placeholder="Enter Email"
+                    required
+                  />
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-mobile"></i>
+                  <input
+                    type="text"
+                    name="mno"
+                    value="<%= user.mobile %>"
+                    placeholder="Enter Mobile"
+                    required
+                  />
+                </div>
+
+                <div class="button input-box">
+                  <input type="submit" value="Update Profile" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Top -->
+    </div>
+    <a href="/" class="mainPageBtn"
+      >Main Page &nbsp;<i class="fa fa-arrow-left"></i
+    ></a>
+  </body>
+</html>

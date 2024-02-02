@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>KRISHTI | ART</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/slick/slick.css" rel="stylesheet" />
+    <link href="lib/slick/slick-theme.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-envelope"></i>
+            nikkisingh1214@yahoo.com
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-phone-alt">&nbsp;+61</i>
+            451496060
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top bar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <div class="logo">
+              <a href="/">
+                <img src="images/logo.png" alt="Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="typewriterWith">
+            <div class="typewriter">
+              <p>Krishti Paintings & Art Classes</p>
+            </div>
+            <!-- <div class="search">
+              <input type="text" placeholder="Krishti Paintings & Art Classes" />
+              <button><i class="fa fa-search"></i></button>
+            </div> -->
+          </div>
+          <div class="col-md-3">
+            <div class="user">
+              <i class="fa fa-user"></i>
+              <a href="<%= user ? '/logout' : '/login' %>" class="btn wishlist">
+                <%= user ? 'Logout' : 'Login' %>
+              </a>
+              <% if (user) { %>
+                <a href="/wishlist" class="btn wishlist">
+                  <i class="fa fa-heart"></i>
+                </a>
+                <% } %>
+              <a href="/cart" class="btn cart">
+                <i class="fa fa-shopping-cart"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+          <a href="#" class="navbar-brand">Krishti</a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav mr-auto">
+              <a href="/" class="nav-item nav-link "
+                >Home &nbsp;<i class="fa fa-home"></i
+              ></a>
+              <a href="/painting" class="nav-item nav-link">Paintings</a>
+              <a href="/gallery" class="nav-item nav-link">gallery</a>
+              <!-- <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  >gallery</a
+                >
+                <div class="dropdown-menu">
+                  <a href="wishlist.html" class="dropdown-item">p1</a>
+                  <a href="login.html" class="dropdown-item">p2</a>
+                  <a href="contact.html" class="dropdown-item">p3</a>
+                </div>
+              </div> -->
+              <a href="/customization" class="nav-item nav-link"
+                >customization</a
+              >
+              <a href="/workshop" class="nav-item nav-link">workshop</a>
+
+              <a href="/about" class="nav-item nav-link active">about us</a>
+              <a href="/contact" class="nav-item nav-link">Contact US</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+              <div class="nav-item dropdown">
+                <a
+                  href="/account"
+                  class="nav-link"
+                  ><%= user.name %>&nbsp; Profile</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+      <div class="container-fluid">
+        <ul class="breadcrumb" id="breadcrumbActive">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <!-- <li class="breadcrumb-item"><a href="#">Products</a></li> -->
+          <li class="breadcrumb-item active">About Us</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+      <div class="container py-5">
+        <div class="row align-items-center aboutMain">
+          <div class="col-lg-5 aboutImg">
+            <img
+              class="img-fluid rounded mb-4 mb-lg-0"
+              src="images/about.jpg"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-7 aboutP">
+            <div class="text-left mb-4 aboutText">
+              <h5
+                class="text-primary text-uppercase mb-3"
+                style="letter-spacing: 5px"
+              >
+                About Us
+              </h5>
+              <h1>Know The Artist behind the Canvas!</h1>
+            </div>
+            <p>
+              <strong
+                >Art, a powerful tool that captures the essence of Life.</strong
+              >&nbsp; I didn’t know this until it happened to me. And then I made it my
+              mission to help others achieve the same. I am Vatsala, the name
+              behind Krishti Paintings and Art School. <br />
+              My stint with brushes and colors goes back to my childhood when I
+              would paint with gay abandon, but then life happened. Colors took
+              a backseat while I pursued my academics and career in Hospitality
+              Management and Real Estate business. Life was good and usual and
+              then COVID struck.
+              <br />
+              It took away the spirit and freedom of life, infecting even simple
+              joy and happiness. A vaccine was a must. <span id="dots">...</span
+              ><span id="more"
+                ><strong>
+                  <br>Art it was, for me.</strong>Falling back on my professional art training I had years ago, I began to paint. The paintings turned out so good that people wanted to buy them. Soon, I found myself making paintings on commission. I began to explore various art forms, be it traditional art, glass paintings, portraits, oils, acrylics, watercolors. I experimented, gathered experienced, learnt on the way while enhancing my expertise. My global travelling experience inspired me to infuse various cultures and perspectives into my art.
+              <br>  I had unlocked a hidden passion and talent.
+              <br>  During this process, I realized that art was not just a way to create beautiful pieces, but a powerful tool for healing, self-discovery and connection. The act of losing myself in colors and expressing my emotions, experience on canvas became a form of therapy. It allowed me to reconnect with my soul and find a sense of purpose and fulfillment.  
+               <br> The realization led to the establishment of Krishti Paintings and Art School, a name inspired by my parents, where I could share my transformative power of art with others. In a world that was grappling with uncertainty and challenges brought about by the pandemic, art became a beacon of hope and positivity. It helped people to overcome their fears, embrace creativity and experience the joy of self-expression.
+               <br> I continue to be on this mission with the help of my team at Krishti Paintings and Art School. We not only help children, beginners and others to enhance their artistic skills but also tap into the depths of their emotions, connect with their inner being and find solace in the act of creation. 
+               <br> So, if you ever feel the need to experience pure joy of creating or wish to reconnect with your inner self, remember Krishti Paintings and Art School. Here, using a paper or a canvas and few colors, we help you to embark on a journey of self-discovery and creativity.
+                </span
+              >
+            </p>
+            <a onclick="showMore()" class="btn btnLoadMore" id="showMoreBtn"
+              >View More<i class="bx bx-chevrons-down"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+      <div class="container pt-5 pb-3">
+        <div class="text-center mb-5">
+          <h5
+            class="text-primary text-uppercase mb-3"
+            style="letter-spacing: 5px"
+          >
+            Teachers
+          </h5>
+          <h1>Meet Our Teachers</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 text-center team mb-4">
+            <div class="team-item rounded overflow-hidden mb-2">
+              <div class="team-img position-relative">
+                <img class="img-fluid" src="images/h1.jpg" alt="" />
+                <div class="team-social">
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="bg-secondary p-4">
+                <h5>Ashwani Tiwari</h5>
+                <p class="m-0">Web Designer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 text-center team mb-4">
+            <div class="team-item rounded overflow-hidden mb-2">
+              <div class="team-img position-relative">
+                <img class="img-fluid" src="images/h2.png" alt="" />
+                <div class="team-social">
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="bg-secondary p-4">
+                <h5>Ashwani Tiwari</h5>
+                <p class="m-0">Web Designer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 text-center team mb-4">
+            <div class="team-item rounded overflow-hidden mb-2">
+              <div class="team-img position-relative">
+                <img class="img-fluid" src="images/h1.jpg" alt="" />
+                <div class="team-social">
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="bg-secondary p-4">
+                <h5>Ashwani Tiwari</h5>
+                <p class="m-0">Web Designer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 text-center team mb-4">
+            <div class="team-item rounded overflow-hidden mb-2">
+              <div class="team-img position-relative">
+                <img class="img-fluid" src="images/h2.png" alt="" />
+                <div class="team-social">
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square mx-1" href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="bg-secondary p-4">
+                <h5>Ashwani Tiwari</h5>
+                <p class="m-0">Web Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Review Start -->
+    <div class="review">
+      <h2>TESTIMONIALS</h2>
+      <div class="container-fluid">
+        <div class="row align-items-center review-slider normal-slider">
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/meenakshi.suri.507/posts/pfbid02wASfGMXg5afrnVSKz8MF8Ff4obzCkBnhB8DuFMqYwVtPrnRMQTqHGVdg8sRfgKXMl" target="_blank"
+                >
+                  <p>
+                    My daughter loves going to her painting class because of
+                    amazing teachers and the way they teach. I highly recommend
+                    parents who are looking for painting class to consider
+                    Krishti Paintings and Art School.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Meenakshi Suri - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/harpreet.kour.31/posts/pfbid0uDXCMFfyR9Be7Yx2wvtVTKFPpVhfM93a9oWBQ2Z6aQRTGuQAPeqmzpnbHUxnLTCkl" target="_blank"
+                >
+                  <p>
+                    My daughter really enjoys these classes. She loves the
+                    teacher, class size, and variety of projects. . The projects
+                    she picks out are always fun for the kids and are adorable.
+                    I highly recommend 😍😍😍👍👍👍
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Harpreet Kour - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/fozia2012/posts/pfbid02169Vt93wAAYpB2bFmcRUfuJDQPeLHAP4zeQ38tPGnqVCQx8yx6qmSN5QcGojYqp2l" target="_blank"
+                >
+                  <p>
+                    Such a nice teacher as every child wants for art class
+                    Specially. Highly recommended as she is so professional,
+                    cooperative, friendly and flexible also. Love her work and
+                    way of teaching
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Fouzia Akram - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/jasvir.brar.50364/posts/pfbid02cz8RfoKRbeedk9CXuTkNm7XteWQsyqQQVx1wUKQJTSQJHr47wa5h8xdQNSywVsFXl" target="_blank"
+                >
+                  <p>
+                    My daughter loves to go there. She started this year and and
+                    now she is doing really very nice and beautiful canvas work
+                    . Krishti is also very nice, helpful and really good teacher
+                    for our kids. I highly recommended her & thank you Dear for
+                    teaching my daughter 😊
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Jasvir Gill - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/niravshethwala/posts/pfbid0XdkjD3G6c4aeuKvmKih8oTASCtumD8PAb2KuEN8WXru66XgLwMZywbSd87swefJvl" target="_blank"
+                >
+                  <p>
+                    Nikki’s knowledge and passion towards paintings and Arts is
+                    amazing. She loves teaching kids the art of drawing and
+                    painting. My daughter has developed great skills in painting
+                    with the help of Nikki. She does canvas painting now and
+                    it’s very impressive and that makes me so proud.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Nirav Shethwala - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/kavita.saigal/posts/pfbid02kpmeHWHCQ7GBkmgU6ij2qE1aik1qWZ8xPwbhAHbkKu4rwU46jHhu92A6JKbWiBwhl" target="_blank"
+                >
+                  <p>
+                    My daughter started learning art work from Nikki and she is
+                    learning new skills with good knowledge of blending colours.
+                    Nikki is a fabulous artist and her art work is just amazing.
+                    She got this talent in a gift from God, I believe. Good luck
+                    for your every project.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Kavita Saigal - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/kaur.jazzee/posts/pfbid02opCLBLoJekvdCq9qXgtEznBaTPAWsoExrvnEzNThAx3HKK2cjHrcLPFvgZ3Zwq2Jl" target="_blank"
+                >
+                  <p>
+                    My daughter has been learning so well with Nikki in Krishti
+                    art and painting classes. She goes regular and now making
+                    professional level paintings. I highly recommend her
+                    classes.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Jaspreet Kaur - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/preet.airy/posts/pfbid03QUcCeGtVDseMqiSmHC7ymrfMRohbMRLPfP4AvsUqveU7Tyu28BKXKFo5SWcLvwDl" target="_blank"
+                >
+                  <p>
+                    I came across Nikki’s page on Facebook and saw her post
+                    regarding classes Decided to send my daughter to enhance her
+                    skills in arts 🎭. She started with basic but now she is
+                    doing great canvas work :. Highly recommended Nikki to
+                    everyone who is interested to learn arts or want decoration
+                    peice for house 🏡.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Amrit Kaur - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/ambi.loki.79/posts/pfbid028Gtn6km1f7Y32RcsmLVfEFLhnmSwXLNshPe8GL4dnHH8r1PtGDLgdK83Fue7YrPAl" target="_blank"
+                >
+                  <p>
+                    It was definitely a challenging art that we requested Nikki
+                    to do it for us and she absolutely nailed it!! If you're
+                    thinking of decorating your home with amazing piece of art,
+                    I would highly recommend her. You're extremely talented,
+                    Nikki.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Ambi Logan - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="review-slider-item">
+              <div class="review-text">
+                <a
+                  href="https://www.facebook.com/ankursehgal47/posts/pfbid0LRdLonxqrpiZK4BgNsPX5GahCWhcSYNuTdatyubkxq2jofNBFNNmXpXbZQb4HaQsl" target="_blank"
+                >
+                  <p>
+                    Just got a Great painting delivered. No words to explain how
+                    beautiful it looks. Thanks heaps. Highly recommended.
+                  </p>
+                  <p style="color: black; font-weight: 600">
+                    Ankur Sehgal - Facebook
+                  </p>
+                  <strong class="btn">click here to view</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Review End -->
+
+    <!-- Footer Start -->
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h2>Get in Touch</h2>
+              <div class="contact-info">
+                <p>
+                  <i class="fa fa-map-marker"></i>Tarneit, Melbourne, VIC,
+                  Australia, Victoria
+                </p>
+                <p><i class="fa fa-envelope"></i>nikkisingh1214@yahoo.com</p>
+                <p><i class="fa fa-phone"></i>+61 451 496 060</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h2>Follow Us</h2>
+              <div class="contact-info">
+                <div class="social">
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100063635016016 "
+                    target="_blank"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href=""><i class="fab fa-linkedin-in"></i></a>
+                  <a href=""><i class="fab fa-instagram"></i></a>
+                  <a href=""><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h2>Useful Links</h2>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="painting.html">Paintings</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h2>More Info</h2>
+              <ul>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="about.html">About us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row payment align-items-center">
+            <div class="col-md-6">
+              <div class="payment-method">
+                <h2>We Accept:</h2>
+                <img src="img/payment-method.png" alt="Payment Method" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="payment-security">
+                <h2>Secured By:</h2>
+                <img src="img/godaddy.svg" alt="Payment Security" />
+                <img src="img/norton.svg" alt="Payment Security" />
+                <img src="img/ssl.svg" alt="Payment Security" />
+              </div>
+            </div>
+          </div> -->
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 copyright">
+            <p>
+              Copyright &copy; <a href="#">2023 | Krishti</a>. All Rights
+              Reserved
+            </p>
+          </div>
+
+          <div class="col-md-6 template-by">
+            <p>
+              Designed By
+              <a href="https://greenindiaenterprises.in/" target="_blank"
+                >Graphics Green India PVT LTD.</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

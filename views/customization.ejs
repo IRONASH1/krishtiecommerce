@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>KRISHTI | ART</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/slick/slick.css" rel="stylesheet" />
+    <link href="lib/slick/slick-theme.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link href="css/queryform.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-envelope"></i>
+            nikkisingh1214@yahoo.com
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-phone-alt">&nbsp;+61</i>
+            451496060
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top bar End -->
+
+     <!-- Bottom Bar Start -->
+     <div class="bottom-bar">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <div class="logo">
+              <a href="/">
+                <img src="images/logo.png" alt="Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="typewriterWith">
+            <div class="typewriter">
+              <p>Krishti Paintings & Art Classes</p>
+            </div>
+            <!-- <div class="search">
+              <input type="text" placeholder="Krishti Paintings & Art Classes" />
+              <button><i class="fa fa-search"></i></button>
+            </div> -->
+          </div>
+          <div class="col-md-3">
+            <div class="user">
+              <i class="fa fa-user"></i>
+              <a href="<%= user ? '/logout' : '/login' %>" class="btn wishlist">
+                <%= user ? 'Logout' : 'Login' %>
+              </a>
+              <% if (user) { %>
+                <a href="/wishlist" class="btn wishlist">
+                  <i class="fa fa-heart"></i>
+                </a>
+                <% } %>
+              <a href="/cart" class="btn cart">
+                <i class="fa fa-shopping-cart"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+          <a href="#" class="navbar-brand">Krishti</a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav mr-auto">
+              <a href="/" class="nav-item nav-link"
+                >Home &nbsp;<i class="fa fa-home"></i
+              ></a>
+              <a href="/painting" class="nav-item nav-link">Paintings</a>
+              <a href="/gallery" class="nav-item nav-link">gallery</a>
+              <!-- <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  >gallery</a
+                >
+                <div class="dropdown-menu">
+                  <a href="wishlist.html" class="dropdown-item">p1</a>
+                  <a href="login.html" class="dropdown-item">p2</a>
+                  <a href="contact.html" class="dropdown-item">p3</a>
+                </div>
+              </div> -->
+              <a href="/customization" class="nav-item nav-link active"
+                >customization</a
+              >
+              <a href="/workshop" class="nav-item nav-link">workshop</a>
+
+              <a href="/about" class="nav-item nav-link">about us</a>
+              <a href="/contact" class="nav-item nav-link">Contact US</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+              <div class="nav-item dropdown">
+                <a
+                  href="/account"
+                  class="nav-link"
+                  ><%= user.name %>&nbsp; Profile</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+      <div class="container-fluid">
+        <ul class="breadcrumb" id="breadcrumbActive">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <!-- <li class="breadcrumb-item"><a href="#">Products</a></li> -->
+          <li class="breadcrumb-item active">Customization</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Gallery discription start -->
+
+    <div class="galleryDiscription">
+      <div class="textDiscription1">
+        <p>We Make Paintings On Customization & Commision Basis.</p>
+        <p>To Get Your's Contact Us!</p>
+      </div>
+    </div>
+
+    <!-- Gallery discription end -->
+
+    <!-- query start -->
+
+    <div class="queryLink">
+      <div class="query1" id="showMoreBtn" onclick="showQueryForm()">
+        <i class="bx bxl-gmail"></i>
+      </div>
+      <a href="https://wa.me/+61451496060" target="_blank">
+        <div class="query2"><i class="bx bxl-whatsapp"></i></div
+      ></a>
+    </div>
+
+    <!-- query end -->
+
+    <!-- query form start -->
+    <div class="queryForm" id="queryForm">
+      <div class="background backgroundQuery">
+        <div class="container">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <a onclick="closeQueryBtn()">
+                  <i class="bx bx-message-square-x"></i>
+                </a>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span
+                    >CONTACT
+                    <span>US</span>
+                  </span>
+                </div>
+                <div class="app-contact">CONTACT INFO : +61 451 496 060</div>
+              </div>
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      value="Krishti Singh"
+                      disabled
+                    />
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      placeholder="YOUR EMAIL"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group">
+                    <input
+                      class="app-form-control"
+                      placeholder="CONTACT NO"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group message">
+                    <input
+                      class="app-form-control"
+                      placeholder="MESSAGE"
+                      required
+                    />
+                  </div>
+                  <div class="app-form-group buttons">
+                    <!-- <button class="app-form-button">CANCEL</button> -->
+                    <button class="app-form-button">SEND</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- query form end -->
+
+    <!-- Gallery show List Start -->
+    <div id="moreGallery">
+      <div class="container-fluid">
+        <div class="row">
+          <% products.forEach((product) => { %>
+          <div class="col-md-4 gridGallery">
+            <div class="product-item">
+              <a href="/product/<%= product._id %>">
+              <div class="product-image">
+                  <img src="<%= product.image1 %>" alt="Image 1">
+                  <div class="product-action">
+                    <img src="<%= product.image2 %>" alt="Image 2">
+                  </div>
+                </div>
+              </a>
+              <div class="product-price">
+                <%= product.title %>
+              </div>
+            </div>
+          </div>
+          <% }); %>  
+        </div>
+      </div>
+    </div>
+    <!-- Gallery show List End -->
+
+  <!-- Footer Start -->
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-widget">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+              <p>
+                <i class="fa fa-map-marker"></i>Tarneit, Melbourne, VIC,
+                Australia, Victoria
+              </p>
+              <p><i class="fa fa-envelope"></i>nikkisingh1214@yahoo.com</p>
+              <p><i class="fa fa-phone"></i>+61 451 496 060</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-widget">
+            <h2>Follow Us</h2>
+            <div class="contact-info">
+              <div class="social">
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063635016016 "
+                  target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-widget">
+            <h2>Useful Links</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="painting.html">Paintings</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-widget">
+            <h2>More Info</h2>
+            <ul>
+              <li><a href="customization.html">Customization</a></li>
+              <li><a href="workshop.html">Workshop</a></li>
+              <li><a href="about.html">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row payment align-items-center">
+          <div class="col-md-6">
+            <div class="payment-method">
+              <h2>We Accept:</h2>
+              <img src="img/payment-method.png" alt="Payment Method" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="payment-security">
+              <h2>Secured By:</h2>
+              <img src="img/godaddy.svg" alt="Payment Security" />
+              <img src="img/norton.svg" alt="Payment Security" />
+              <img src="img/ssl.svg" alt="Payment Security" />
+            </div>
+          </div>
+        </div> -->
+    </div>
+  </div>
+  <!-- Footer End -->
+
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 copyright">
+            <p>
+              Copyright &copy; <a href="#">2023 | Krishti</a>. All Rights
+              Reserved
+            </p>
+          </div>
+
+          <div class="col-md-6 template-by">
+            <p>
+              Designed By
+              <a href="https://greenindiaenterprises.in/" target="_blank"
+                >Graphics Green India PVT LTD.</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!-- views/create.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Data</title>
+</head>
+<body>
+  <h1>Create Data</h1>
+  <form action="/admin/productadmin" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Create</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Forget password</title>
+    <link rel="stylesheet" href="css/account.css" />
+
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="flip" />
+      <div class="cover">
+        <div class="front">
+          <img src="img/user.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Every new art is <br />
+              in you.</span
+            >
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+        <div class="back">
+          <img src="img/user.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Complete miles of journey <br />
+              with one step</span
+            >
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Edit User Details</div>
+            <form action="" method="POST">
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="name" name="name" placeholder="Enter Name" value="<%= user.name %>" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-mobile"></i>
+                  <input type="text" name="mno" placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+                </div>
+                <div class="input-box">
+                    <label> Verified </label>
+                    <input type="radio" name="verify" value="1" <% if(user.is_verified == 1){ %> checked <% } %> >
+                    <label> Unverified </label>
+                    <input type="radio" name="verify" value="0" <% if(user.is_verified == 0){ %> checked <% } %>>
+                    <br><br>
+                    <input type="hidden" name="id" value="<%= user._id %>">
+                </div>
+
+                <div class="button input-box">
+                    <input type="submit" value="Update User">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Top -->
+    </div>
+    
+    <a href="/admin/home"  class="mainPageBtn">Go To Dashboard<i class="fa fa-arrow-left"></i
+        ></a>
+  </body>
+</html>

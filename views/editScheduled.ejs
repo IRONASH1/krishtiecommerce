@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Re-scheduled Class</title>
+    <link rel="stylesheet" href="../css/account.css" />
+
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="flip" />
+      <div class="cover">
+        <div class="front">
+          <img src="../images/acoount.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Every new art is <br />
+              in you.</span
+            >
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+        <div class="back">
+          <img src="images/account2.jpg" alt="parrotimage" />
+          <div class="text">
+            <span class="text-1"
+              >Complete miles of journey <br />
+              with one step</span
+            >
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Re-Scheduled Your Classess</div>
+              <form
+               method="POST" action="/editScheduled/<%= product._id %>" enctype="multipart/form-data"
+            >
+              <div class="input-boxes">
+                <div class="input-box">
+                  <input
+                type="hidden"
+                name="name"
+                value="<%= product.name %>"
+              />
+                  <input
+                type="hidden"
+                name="email"
+                value="<%= product.email %>"
+              />
+                  <input
+                type="hidden"
+                name="workshop"
+                value="<%= product.workshop %>"
+              />
+                  <input
+                type="hidden"
+                name="title"
+                value="<%= product.title %>"
+              />
+              
+                  <input
+                    type="text"
+                    name="workshop"
+                    value="Workshop name - <%= product.workshop %>"
+               disabled
+                   
+                  />
+                </div>
+                <div class="input-box">
+                  <input
+                    type="email"
+                    name="title"
+                    value="Workshop Title - <%= product.title %>"
+                    placeholder="Enter Email"
+                    disabled
+                  />
+                </div>
+                <div class="input-box">
+                  <input
+                    type="text"
+                    name=""
+                    value="<% product.scheduledDateTimes.forEach(dateTime => { %>
+                     <%= new Date(dateTime).toLocaleString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'}) %>
+                    <% }); %>"
+                    disabled
+                  />
+                </div>
+                <div class="input-box">
+                  <label style="color: black;">Re-Scheduled : &nbsp;</label>
+                  <select id="selectedDateTime" name="scheduledDateTimes" required>
+                    <option value="" disabled selected hidden>Choose One</option>
+                    <% wp.scheduledDateTimes.forEach(dateTime => { %>
+                      <option value="<%= new Date(dateTime).toISOString() %>">
+                        <%= new Date(dateTime).toLocaleString([], {
+                          year: 'numeric',
+                          month: 'numeric',
+                          day: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          hour12: true,
+                        }) %>
+                      </option>
+                    <% }); %>
+                  </select>
+                </div>
+
+                <div class="button input-box">
+                  <input type="submit" value="Update Scheduled Timings" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Top -->
+    </div>
+    <a href="/" class="mainPageBtn"
+      >Main Page &nbsp;<i class="fa fa-arrow-left"></i
+    ></a>
+  </body>
+</html>
