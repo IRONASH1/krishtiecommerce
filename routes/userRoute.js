@@ -70,6 +70,8 @@ const userController = require("../controllers/userController");
 
 user_route.get('/',userController.webLoad);
 
+user_route.get('/checkout',userController.checkoutLoad);
+
 user_route.get('/painting',userController.paintingLoad);
 
 user_route.get('/gallery',userController.galleryLoad);

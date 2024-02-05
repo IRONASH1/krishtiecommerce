@@ -109,6 +109,20 @@ const webLoad = async(req,res)=>{
 
 }
 
+const checkoutLoad = async(req,res)=>{
+    try {
+        const user = "";
+        // const products = await Product.find();
+        const products = await Product.find().sort({ created_at: -1 }); // Sort in descending order
+        // res.render('home',{ user });
+        res.render('checkout', { user: user, products: products });
+
+    } catch (error) {
+        console.log(error.message);
+    }
+
+}
+
 const paintingLoad = async(req,res)=>{
   
     try {
@@ -1147,6 +1161,7 @@ module.exports = {
     Productpage,
     bookClassPage,
     webLoad,
+    checkoutLoad,
     paintingLoad,
     galleryLoad,
     customizationLoad,
