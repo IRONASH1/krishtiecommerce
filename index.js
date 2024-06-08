@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 
 // Set up static file serving for assets (CSS, images, etc.)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));  
 // app.use(express.static('public'));
 
 // for home
